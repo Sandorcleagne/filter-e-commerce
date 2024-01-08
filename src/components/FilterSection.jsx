@@ -30,20 +30,8 @@ const FilterSection = ({ loading, setFilteredData }) => {
       setRatings((prev) => [...prev, items]);
     }
   };
-  const checkingFilterObj = () => {
-    if (genderCat.length > 0) {
-      console.log("This condtion is working");
-    }
-    if (ratings.length > 0) {
-      filterObj["rating"] = true;
-    }
-  };
-  console.log("filterObj", filterObj);
   useEffect(() => {
-    checkingFilterObj();
-  }, [filterObj]);
-  useEffect(() => {
-    filterItems(genderCat, setFilteredData, products);
+    filterItems(genderCat, setFilteredData, products, ratings);
   }, [genderCat, ratings]);
 
   return (
